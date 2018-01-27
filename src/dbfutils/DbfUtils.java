@@ -90,7 +90,6 @@ public class DbfUtils {
 							rowdate[j] = data;
 						}
 						
-//						System.out.println(rowdate[j].toString());
 					}
 					
 					writer.addRecord(rowdate);
