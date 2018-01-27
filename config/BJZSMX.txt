@@ -1,0 +1,30 @@
+MXJSZH|C|6
+MXBFZH|C|10
+MXYWLB|C|2
+MXZQDH|C|6
+MXXWDH|C|6
+MXGDDM|C|10
+MXJCGS|N|12|0
+MXJCRQ|D
+MXJSRQ|D
+MXJSLS|C|10
+MXFSJE|B|16|2
+MXHBDH|C|3
+MXFSRQ|D
+sqlconfig
+select 
+  '18001'             MXJSZH,
+  '100001'            MXBFZH,
+  'ZS'                MXYWLB,
+  b.security_code     MXZQDH,
+  a.bind_seat         MXXWDH,
+  a.shareholder_id    MXGDDM,
+  a.current_qty       MXJCGS,
+  20180120            MXJCRQ,
+  20180121            MXJSRQ,
+  '1'                 MXJSLS,
+  122.31              MXFSJE,
+  'RMX'               MXHBDH,
+  20180120            MXFSRQ
+from tcombistock a, tsecurity b
+where a.security_id = b.security_id
