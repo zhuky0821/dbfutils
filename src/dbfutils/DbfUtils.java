@@ -222,8 +222,8 @@ public class DbfUtils {
 	}
 	
 	
-	public static void main(String[] args) {
-		dbfWrite("C:\\work\\BJZSMX.dbf");
-		
-	}
+//	public static void main(String[] args) {
+//		dbfWrite("C:\\work\\BJZSMX.dbf");
+//		
+//	}
 }
