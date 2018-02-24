@@ -21,8 +21,8 @@ public class DbfUtils {
 	}
 	
 	/**
-	 * dbfÎÄ¼þÐ´Èë
-	 * @param file        Êä³öÎÄ¼þ
+	 * dbfï¿½Ä¼ï¿½Ð´ï¿½ï¿½
+	 * @param file        ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½
 	 */
 	public static void dbfWrite(String file){
 		
@@ -38,6 +38,7 @@ public class DbfUtils {
 			
 			if(filePath.exists())
 				filePath.delete();
+			
 			
 			
 			DBFWriter writer = new DBFWriter();
@@ -68,11 +69,11 @@ public class DbfUtils {
 //						System.out.println(cloName);
 						
 						if(fields[j].getDataType() == DBFField.FIELD_TYPE_N){
-							//¸¡µãÊý
+							//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 							rowdate[j] = rs.getDouble(cloName);
 						}
 						else if(fields[j].getDataType() == DBFField.FIELD_TYPE_D){
-							//ÈÕÆÚ
+							//ï¿½ï¿½ï¿½ï¿½
 							SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
 							String data = rs.getString(cloName);
 							
@@ -80,7 +81,7 @@ public class DbfUtils {
 							rowdate[j] = date;
 						}
 						else {
-							//×Ö·û´®
+							//ï¿½Ö·ï¿½ï¿½ï¿½
 							
 							String data = rs.getString(cloName).trim();
 							if(data.length() > fields[j].getFieldLength()){
@@ -120,7 +121,7 @@ public class DbfUtils {
 	}
 	
 	public static DBFField[] getDbfFields(String name){
-		//»ñÈ¡ÅäÖÃ
+		//ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½
 		File configFile = ConfigRead.readConfig(name + ".txt");
 		BufferedReader bufferedReader = null;
 		DBFField[] fields = null;
@@ -143,13 +144,13 @@ public class DbfUtils {
 						continue;
 					
 					if((confs[1].equals("C") || confs[1].equals("c")) && confs.length >= 3){
-						//×Ö·û´®ÀàÐÍ
+						//ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 						field.setName(confs[0]);
 						field.setDataType(DBFField.FIELD_TYPE_C);
 						field.setFieldLength(Integer.parseInt(confs[2]));
 					}
 					else if(confs[1].equals("D") || confs[1].equals("d")){
-						//ÈÕÆÚÀàÐÍ
+						//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 						field.setName(confs[0]);
 						field.setDataType(DBFField.FIELD_TYPE_D);
 //						if(confs.length > 2){
@@ -160,7 +161,7 @@ public class DbfUtils {
 //						}
 					}
 					else if((confs[1].equals("N") || confs[1].equals("n")) && confs.length >= 4){
-						//¸¡µãÊýÀàÐÍ
+						//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 						field.setName(confs[0]);
 						field.setDataType(DBFField.FIELD_TYPE_N);
 						field.setFieldLength(Integer.parseInt(confs[2]));
@@ -217,7 +218,7 @@ public class DbfUtils {
 			e.printStackTrace();
 		}
 		
-		System.out.println("»ñÈ¡µ½µÄ²éÑ¯sql£º" + sql);
+		System.out.println("ï¿½ï¿½È¡ï¿½ï¿½ï¿½Ä²ï¿½Ñ¯sqlï¿½ï¿½" + sql);
 		return sql;
 	}
 	
